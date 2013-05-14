@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+
+    <style type="text/css" media="screen">
+    body{
+      font-family: 'Helvetica';
+      word-spacing: 0.1875em;
+      line-height: 1.5em;
+      color: rgb(85, 85, 85);
+    }
+    p{
+      max-width: 580px;
+    }
+
+    </style>
+  <body>
+
+  </body>
+     <script src="jquery.js"></script>
+    <!-- // <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script> -->
+    <script src="tween.js"></script>
+    <script src="two.js"></script>
+
+  </head>
+  <body>
+    <h3>Disegna</h3>
+    <div id="draw"></div>
+
+    <script>
+
+
+      var elem = document.getElementById('draw');
+      var two = new Two({ width: 285, height: 200 }).appendTo(elem);
+
+      var circle = two.makeCircle(100, 100, 50);
+      circle.fill = '#FF8000';
+      circle.stroke = '#FFAF00';
+      circle.linewidth = 10;
+
+
+      // Groups can take an array of shapes and/or groups.
+      // var group = two.makeGroup(circle, rect);
+
+      // // And have translation, rotation, scale like all shapes.
+      // group.translation.set(two.width / 2, two.height / 2);
+      // group.rotation = Math.PI;
+      // group.scale = 0.75;
+
+      // // You can also set the same properties a shape have.
+      // group.linewidth = 4;
+
+      two.update();
+    </script>
+
+  </body>
+</html>
